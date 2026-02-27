@@ -2,7 +2,7 @@ import { addUser,deleteUser,showUsers,login } from "../controllers/userControlle
 import {authenticate,authorize} from "../middleware/auth.js";
 import express from "express"
 const userRouter =express.Router();
-userRouter.get("/",authenticate,authorize("admin"),showUsers)
+userRouter.get("/",showUsers)
 userRouter.post("/signup",addUser)
 userRouter.post("/login",login)
 userRouter.delete("/deleteUser/:id",deleteUser)
